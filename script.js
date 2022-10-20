@@ -2,8 +2,6 @@ let hands = ["rock", "paper", "scissors"]
 let playerEl = document.getElementById("player-el")
 let computerEL = document.getElementById("computer-el")
 let resultEl = document.getElementById("result-el")
-let numbersEl = document.getElementById("numbers-el")
-let win = 0
 const vinVisUgebs = {
 	"scissors": "paper",
 	"paper": "rock",
@@ -15,7 +13,6 @@ function RPS(selection) {
 	let computerChoice = RPSComputer() ;
 	computerEL.textContent = computerChoice
 	resultEl.textContent = winner(selection,computerChoice) 
-	numbersEl.textContent = win
 }
 
 
@@ -29,9 +26,7 @@ function winner(selection,computerChoice) {
 		return "draw"
 	}  
 	if (vinVisUgebs[selection] === computerChoice){
-		win ++
 		return "You win"
 	} 
-	win --
 	return "You lose"
 }
